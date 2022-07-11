@@ -1,0 +1,58 @@
+.Card {
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    padding: 15px;
+
+    .box-card{
+        gap: 10px;
+        .image {
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid #f2f2f2;
+    
+            img {
+                width: 250px;
+                border-radius: 4px;
+            }
+        }
+    
+        .title {
+            align-items: flex-start;
+            gap: 10px;
+
+            svg {
+                width: 15px;
+                height: 15px;
+                color: #707070;
+            }
+    
+            h5,span {
+                gap: 7px;
+            }
+    
+            h5{
+                margin: 0;
+            }
+
+            span{
+                font-size: 10px;
+                color: #707070;
+            }
+        }
+    
+        .description {
+            p {
+                max-width: 100%;
+                font-size: 14px;
+                font-weight: 400;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+}

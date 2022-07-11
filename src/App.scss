@@ -1,0 +1,22 @@
+@import './Colors.scss';
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba($color: $scrollBarColor, $alpha: 0.2);
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scrollBarColor;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollBarHoverColor;
+}

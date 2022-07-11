@@ -1,0 +1,21 @@
+@import '../../Colors.scss';
+
+.ButtonLink {
+    height: 48px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 15px;
+
+    &.full{
+        background: $mainColor;
+        color: $white;
+        border: 2px solid $mainColor;
+    }
+
+    &.light{
+        background: $white;
+        border: 2px solid #DBEBFF;
+        color: $mainColor;
+    }
+}

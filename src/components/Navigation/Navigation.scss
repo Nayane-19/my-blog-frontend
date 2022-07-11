@@ -1,0 +1,63 @@
+@import '../../Colors.scss';
+
+
+.Navigation {
+    background: $background;
+
+    .box-nav {
+        justify-content: space-between;
+        padding: 20px 0;
+
+        img {
+            height: 140px;
+        }
+
+        ul {
+            gap: 15px;
+
+            li{
+                list-style: none;
+                a, span {     
+                    color: $link;  
+                    font-weight: 500;             
+                    font-size: 16px;
+
+                    &:hover{
+                        color: $hoverLink;
+                    }
+                }
+            }
+
+            .login{
+                gap: 7px;
+
+                a {
+                    text-decoration: revert;
+                    position: relative;
+                    display: inline-block;
+                    max-width: 160px;
+                    &:after {
+                    content: "";
+                    position: absolute;
+                    top: 110%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 0%;
+                    height: 1px;
+                    transition: 0.5s ease;
+                    border-radius: 1px;
+                    background: $hoverLink;
+                    }
+                    &:hover {
+                    color: $hoverLink;
+                    text-decoration: none;
+
+                    &:after {
+                        width: 100%;
+                    }
+                    }
+                }
+            }
+        }
+    }
+}

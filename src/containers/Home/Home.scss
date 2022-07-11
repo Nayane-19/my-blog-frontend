@@ -1,0 +1,59 @@
+@import '../../Colors.scss';
+
+.Home {
+
+    .header {
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .ilustration {
+            max-width: 40%;
+        }
+
+        .container {
+            max-width: unset !important;
+            width: unset !important;
+            margin-left: unset !important;
+            margin-right: unset !important;
+        }
+
+        .box-right {
+            gap: 100px;
+            width: 50%;
+
+            .info {
+                gap: 10px;
+              
+                h1{
+                    font-size: 24px;
+                    color: $title;
+                    margin: 0;
+                }
+
+                p {
+                    color: $darkText;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                .btn-header {
+                    justify-content: flex-start;
+                    gap: 20px;
+                    margin-top: 25px;
+
+                    a {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-row-gap: 15px;
+        grid-column-gap: 20px;
+        margin: 30px 0;
+        grid-template-columns: repeat(2, minmax(500px, 1fr));
+    }
+}
