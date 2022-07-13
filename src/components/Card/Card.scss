@@ -1,5 +1,7 @@
+@import '../../Colors.scss';
+
 .Card {
-    background: #fff;
+    background: $white;
     border: 1px solid #f2f2f2;
     border-radius: 4px;
     padding: 15px;
@@ -24,7 +26,7 @@
             svg {
                 width: 15px;
                 height: 15px;
-                color: #707070;
+                color: $greyText;
             }
     
             h5,span {
@@ -33,11 +35,12 @@
     
             h5{
                 margin: 0;
+                color: $title;
             }
 
             span{
                 font-size: 10px;
-                color: #707070;
+                color: $greyText;
             }
         }
     
@@ -51,6 +54,33 @@
                 display: -webkit-box;
                 overflow: hidden;
                 text-overflow: ellipsis;
+            }
+        }
+
+        .box-bottom {
+            justify-content: space-between;
+
+            span {
+                gap: 7px;
+                font-size: 14px;
+                color: $greyText;
+
+                svg {
+                    color: $greyText;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            a {
+                height: 38px;
+                font-size: 14px;
+                gap: 7px;
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
             }
         }
     }

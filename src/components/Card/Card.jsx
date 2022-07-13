@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Card.scss'
 import {ReactComponent as Writer} from '../../assets/svg/poem.svg';
-import {ReactComponent as Check} from '../../assets/svg/check-circle-400.svg';
-import ImageUrl from '../ImageUrl/ImageUrl';
+import {ReactComponent as ArrowRight} from '../../assets/svg/arrow-right.svg';
+import {ReactComponent as Calendar} from '../../assets/svg/calendar.svg';
+import ButtonLink from '../ButtonLink/ButtonLink';
 
 
 
-function Card({article}) {
+function Card({article, id}) {   
 
   return (
     <div className='Card'>
         {article &&
-        <div className="flex box-card">
-             <div className="image flex">
-                <ImageUrl image={article.picture.data.attributes.url} />
-            </div>
+        <div className="column box-card">
             <div className="column">
             <div className="title column">
                 <h5 className='flex'>
                     {article.title}
                 </h5>
                 <span className='flex'>
-                    <Writer/>
-                    {article.author}
-                </span>
-                <span className='flex'>
-                    <Check />
+                    <Calendar />
                     {article.date_publish}
                 </span>
             </div>
@@ -34,6 +28,16 @@ function Card({article}) {
                     {article.description}
                 </p>
             </div>
+        </div>
+        <div className="flex box-bottom">
+            <span className='flex'>
+                <Writer/>
+                {article.author}
+            </span>
+            <ButtonLink className='flex' full={true} link="/">
+                Ler mais
+                <ArrowRight/>
+            </ButtonLink>
         </div>
         </div>
         }

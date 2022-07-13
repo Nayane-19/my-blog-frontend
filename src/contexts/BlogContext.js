@@ -11,6 +11,16 @@ import http from '../lib/api';
     // create Pet Provider
     export const BlogProvider = ({children}) => {
         const [articles, setArticles] = useState("");
+        const [ user, setUser] = useState('')
+
+          // get pet id value
+        const getUser = async () => {
+              await http.get(`/api/users?populate=*`).then((r) => {
+               if(r){
+                setUser(r.data)
+               }
+              });
+        };
 
         // const [nav_value, set_nav_value] = useState("PetList");
         // const [petId, setPetId] = useState("");
@@ -31,10 +41,7 @@ import http from '../lib/api';
         // const changeNavValue = (value) => {
         //     set_nav_value(value);
         // };
-        // // get pet id value
-        // const getPetId = (id) => {
-        //     setPetId(id);
-        // };
+    
     
         useEffect(()=>{
             const readAllArticles = async () => {
@@ -47,6 +54,8 @@ import http from '../lib/api';
     
         const value = {
             articles,
+            user,
+            getUser
         };
         return(
           <BlogContext.Provider value={value}>

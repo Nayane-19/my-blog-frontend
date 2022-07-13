@@ -1,0 +1,39 @@
+@import '../../Colors.scss';
+
+.Form {
+    background: $white;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    width: 40%;
+    margin-bottom: 50px;
+
+    p{
+        color: $title;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    input {
+        height: 48px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        &::placeholder{
+            color: $greyText;
+            font-size: 12px;
+            padding-left: 10px;
+        }
+    }
+
+    button {
+        height: 48px;
+        background: $mainColor;
+        border: none;
+        border-radius: 4px;
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
