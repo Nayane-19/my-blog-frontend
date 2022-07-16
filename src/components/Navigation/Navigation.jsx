@@ -17,16 +17,16 @@ function Navigation() {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/'>
+                    <Link to='/artigos'>
                         Artigos
                     </Link>
                 </li>
                 <li className="flex login">
-                    <Link to='/'>
+                    <Link to='/login'>
                         Entrar
                     </Link>
                     <span>ou</span>
-                    <Link to='/'>
+                    <Link to='/cadastro'>
                         Cadastrar
                     </Link>
                 </li>

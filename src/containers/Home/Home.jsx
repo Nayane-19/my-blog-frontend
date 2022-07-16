@@ -31,10 +31,10 @@ function Home() {
                         Onde todos poderão aprender uns com os outros compartilhando conhecimento.
                     </p>
                     <div className="flex btn-header">
-                        <ButtonLink link='/' full={false} >
+                        <ButtonLink link='/login' full={false} >
                             Entrar
                         </ButtonLink>
-                        <ButtonLink link='/' full={true}>
+                        <ButtonLink link='/cadastro' full={true}>
                             Seja um autor
                         </ButtonLink>
                     </div>

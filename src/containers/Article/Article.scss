@@ -1,0 +1,83 @@
+@import '../../Colors.scss';
+
+.Article {
+    position: relative;
+
+    .box-title {
+        justify-content: flex-start;
+        padding: 45px 0;
+        height: 500px;
+        align-items: flex-start;
+        
+        .info-article {
+            gap: 25px;
+            
+            .column {
+                span {
+                    font-size: 14px;
+                }
+
+                small {
+                    color: $greyText;
+                }
+            }
+
+            h1 {
+                margin: 0;
+                z-index: 2;
+                max-width: 80%;
+                font-size: 100px;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    .height-blue{
+        height: 500px;
+        width: calc(100vw - 37vw);
+        background: #549EFF;
+        position: absolute;
+        right: 0;
+        top: 180px;
+    }
+
+    ul {
+        li {
+            margin: 5px 0;
+        }
+    }
+
+    .box-article {
+        align-items: flex-start;
+        gap: 40px;
+
+        .box-description{
+            padding: 25px;
+            background: $white;
+
+            h5{
+                font-size: 24px;
+            }
+        }
+
+        .box-info{
+            gap: 15px;
+
+            .flex{
+                justify-content: flex-start;
+                gap: 7px;
+            }
+
+            span {
+                color: $greyText;
+                font-size: 14px;
+            }
+
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}

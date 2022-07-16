@@ -1,0 +1,13 @@
+@import "../../Colors.scss";
+
+
+  .labelInvalid {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #dd5454;
+    right: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+  }

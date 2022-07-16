@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Card.scss'
 import {ReactComponent as Writer} from '../../assets/svg/poem.svg';
 import {ReactComponent as ArrowRight} from '../../assets/svg/arrow-right.svg';
@@ -7,7 +7,7 @@ import ButtonLink from '../ButtonLink/ButtonLink';
 
 
 
-function Card({article, id}) {   
+function Card({article}) {   
 
   return (
     <div className='Card'>
@@ -34,7 +34,7 @@ function Card({article, id}) {
                 <Writer/>
                 {article.author}
             </span>
-            <ButtonLink className='flex' full={true} link="/">
+            <ButtonLink className='flex' full={true} link={`/artigo/${article.slug}`}>
                 Ler mais
                 <ArrowRight/>
             </ButtonLink>
