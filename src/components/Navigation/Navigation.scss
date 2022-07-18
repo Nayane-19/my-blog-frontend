@@ -59,5 +59,48 @@
                 }
             }
         }
+
+        .user {
+            gap: 7px;
+            position: relative;
+            cursor: pointer;
+            svg {
+                width: 24px;
+                height: 24px;
+                color: $link;
+            }
+
+            &:hover{
+                .avatar, span{
+                    color: $hoverLink;
+                }
+            }
+
+            .drop{
+                position: absolute;
+                background: $white;
+                border-radius: 4px;
+                filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.1));
+                padding: 10px;
+                top: 38px;
+                width: 100%;
+
+                &:hover{
+                    svg, button {
+                        color: $hoverLink;
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    background: transparent;
+                    gap: 7px;
+                    font-size: 16px;
+                    color: $link;
+                    font-weight: 500;
+                }
+            }
+        }
     }
 }

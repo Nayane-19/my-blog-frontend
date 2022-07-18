@@ -9,7 +9,7 @@ import ButtonLink from '../../components/ButtonLink/ButtonLink';
 
 
 function Home() {
-    const {articles} = useBlogContext()
+    const {articles, user} = useBlogContext()
 
     useEffect(() => {
         if(articles)
@@ -24,13 +24,23 @@ function Home() {
                 <Navigation/>
                 <div className="column info">
                     <h1>
-                        Venha fazer parte dessa comunidade!
+                        {user ? 'Seja bem-vindo(a) a nossa comunidade!' : 'Venha fazer parte dessa comunidade!'}
                     </h1>
                     <p>
                         De dev para dev tem o intuito de aproximar o máximos de desenvolvedores póssiveis por meio de artigos.
                         Onde todos poderão aprender uns com os outros compartilhando conhecimento.
                     </p>
+                    {user ?
                     <div className="flex btn-header">
+                        <ButtonLink link='/login' full={false} >
+                            Ver seus artigos
+                        </ButtonLink>
+                        <ButtonLink link='/escrever-artigo' full={true}>
+                           Escrever um artigo
+                        </ButtonLink>
+                     </div>
+                     :
+                     <div className="flex btn-header">
                         <ButtonLink link='/login' full={false} >
                             Entrar
                         </ButtonLink>
@@ -38,6 +48,7 @@ function Home() {
                             Seja um autor
                         </ButtonLink>
                     </div>
+                    }
                 </div>
             </div>
         </div>

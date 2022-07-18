@@ -1,0 +1,81 @@
+@import '../../Colors.scss';
+
+.WriteArticle {
+
+    .box-write {
+        gap: 25px;
+    }
+    
+    form {
+        background: $white;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 4px;
+        width: 40%;
+        margin-bottom: 50px;
+
+        p{
+            color: $title;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        input {
+            height: 48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+
+            &::placeholder{
+                color: $greyText;
+                font-size: 12px;
+                padding-left: 10px;
+            }
+        }
+
+        textarea{
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+
+            &::placeholder{
+                color: $greyText;
+                font-size: 12px;
+                padding: 10px;
+            }
+        }
+
+        button {
+            height: 48px;
+            background: $mainColor;
+            border: none;
+            border-radius: 4px;
+            color: $white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .image-upload {
+            position: relative;
+
+            .custom-file-label {
+                width: 100%;
+                gap: 7px;
+                color: $mainColor;
+                border: 2px dotted $mainColor;
+                border-radius: 4px;
+                height: 48px;
+                font-size: 14px;
+            }
+
+            .custom-file-input{
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}

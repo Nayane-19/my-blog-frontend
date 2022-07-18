@@ -1,15 +1,18 @@
 import './App.scss';
 import Home from './containers/Home/Home';
 import Footer from './components/Footer/Footer';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
 import Article from './containers/Article/Article';
 import Navigation from './components/Navigation/Navigation';
 import Articles from './containers/Articles/Articles';
 import Login from './containers/Login/Login';
 import Signup from './containers/Signup/Signup';
+import { useBlogContext } from './contexts/BlogContext';
+import WriteArticle from './containers/WriteArticle/WriteArticle';
 
 
 function App() {
+  const {user} = useBlogContext();
 
   return (
     <Router basename={'/'}>
@@ -19,6 +22,7 @@ function App() {
         <Route path="/artigos" element={<Articles/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cadastro" element={<Signup/>}/>
+        <Route path="/escrever-artigo" element={user ? <WriteArticle/> : <Login/>}/>
       </Routes>
       <Footer/>
     </Router>

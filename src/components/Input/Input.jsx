@@ -21,11 +21,11 @@ function Input(props) {
     return (
         <>
             {props.mask?
-                <InputMask placeholderChar='_' {...props} ref={props.inputRef} name={props.id}onChange={handleChange} required={!props.optional} />
+                <InputMask placeholderChar='_' {...props} ref={props.inputRef} name={props.id} onChange={handleChange} required={!props.optional} />
             :
                <input {...props} ref={props.inputref} name={props.id} onChange={handleChange} required={!props.optional} />
             }
-            {errorMessage &&
+            {errorMessage && props.showerros &&
              <label className="labelInvalid" htmlFor={props.id}>{errorMessage}</label>
             }
         </>

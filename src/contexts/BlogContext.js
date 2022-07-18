@@ -13,34 +13,20 @@ import http from '../lib/api';
         const [articles, setArticles] = useState("");
         const [ user, setUser] = useState('')
 
-          // get pet id value
-        const getUser = async () => {
-              await http.get(`/api/users?populate=*`).then((r) => {
-               if(r){
-                setUser(r.data)
-               }
-              });
-        };
+        const setUserInfo = () => {
+          if(localStorage.getItem('userdata')){
+            setUser(JSON.parse(localStorage.getItem('userdata')))            
+          }else {
+            setUser('')
+          }
+        }
 
-        // const [nav_value, set_nav_value] = useState("PetList");
-        // const [petId, setPetId] = useState("");
-        
-        // // add new pet
-        // const createNewPet = async (data) => {
-        //     await http.post("/api/pets", data);
-        // };
-        // // update a pet entry
-        // const updatePet = async (petId, data) => {
-        //     await http.put(`/api/pets/${petId}`, data);
-        // };
-        // // delete a pet entry
-        // const deletePet = async (petId) => {
-        //     await http.delete(`/api/pets/${petId}`);
-        // };
-        // // change navigation value
-        // const changeNavValue = (value) => {
-        //     set_nav_value(value);
-        // };
+
+        useEffect(() => {
+          if(localStorage.getItem('userdata')){
+            setUser(JSON.parse(localStorage.getItem('userdata')))            
+          }
+        }, [])
     
     
         useEffect(()=>{
@@ -55,7 +41,7 @@ import http from '../lib/api';
         const value = {
             articles,
             user,
-            getUser
+            setUserInfo
         };
         return(
           <BlogContext.Provider value={value}>

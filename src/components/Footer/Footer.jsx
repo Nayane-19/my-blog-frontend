@@ -37,7 +37,7 @@ function Footer() {
                 </span>
              </div>
           </div>
-          <Form title='Se inscreva na nossa Newsletter' button='Enviar'/>
+          <Form title='Se inscreva na nossa Newsletter' button='Enviar' newsLetter={true}/>
         </div>
     </footer>
   );
