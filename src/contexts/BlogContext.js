@@ -21,6 +21,12 @@ import http from '../lib/api';
           }
         }
 
+        const setArticlesWriter = async () => {
+            const response = await http.get("/api/articles?populate=*");
+            const responseArr = Object.values(response.data.data);
+            setArticles(responseArr);
+        }
+
 
         useEffect(() => {
           if(localStorage.getItem('userdata')){
@@ -41,7 +47,8 @@ import http from '../lib/api';
         const value = {
             articles,
             user,
-            setUserInfo
+            setUserInfo,
+            setArticlesWriter
         };
         return(
           <BlogContext.Provider value={value}>

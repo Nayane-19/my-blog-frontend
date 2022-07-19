@@ -20,3 +20,86 @@
 ::-webkit-scrollbar-thumb:hover {
   background: $scrollBarHoverColor;
 }
+
+.alertify {
+  .ajs-dialog {
+    max-width: 450px;
+    min-height: 122px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 3px;
+  }
+  .ajs-header {
+    color: $mainColor;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: normal;
+    border-radius: 6px 6px 0 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+  }
+  .ajs-body {
+    font-family: "Roboto", sans-serif;
+    color: $greyText;
+    .ajs-content {
+      input {
+        border: none;
+        border-bottom: 3px solid $mainColor;
+        -webkit-border-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#72c5ff),
+            to($mainColor)
+          )
+          0 0 1 0;
+        border-image: linear-gradient(to right, #72c5ff, $mainColor);
+        border-image-slice: 1;
+        border-radius: 3px;
+        padding: 5px;
+      }
+    }
+  }
+  .ajs-footer {
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 0 0 6px 6px;
+    .ajs-buttons .ajs-button {
+      border: none;
+      background-color: $mainColor;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.alertify-notifier {
+  z-index: 400000;
+  min-width: 400px;
+  max-width: 450px;
+  position: fixed;
+  top: 20%;
+  right: 100px;
+  .ajs-message {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    text-align: center;
+    border-radius: 4px;
+    padding: 25px;
+    &.ajs-success {
+      color: #fff;
+      background: rgba(91, 189, 114, 0.95);
+    }
+    &.ajs-error {
+      color: #fff;
+      background: rgba(217, 92, 92, 0.95);
+    }
+    &.ajs-warning {
+      background: rgba(252, 248, 215, 0.95);
+      border-color: #999;
+    }
+  }
+}

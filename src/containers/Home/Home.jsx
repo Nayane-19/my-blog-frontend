@@ -32,7 +32,7 @@ function Home() {
                     </p>
                     {user ?
                     <div className="flex btn-header">
-                        <ButtonLink link='/login' full={false} >
+                        <ButtonLink link={`/meus-artigos/${user.id}`} full={false} >
                             Ver seus artigos
                         </ButtonLink>
                         <ButtonLink link='/escrever-artigo' full={true}>

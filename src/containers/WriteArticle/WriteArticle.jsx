@@ -6,9 +6,10 @@ import Writer from '../../assets/img/writer.png';
 import { ReactComponent as Plus } from "../../assets/svg/plus.svg";
 import { useBlogContext } from "../../contexts/BlogContext";
 import { createArticle, uploadImage } from "../../blogApi/apiMethod";
+import alertify from "alertifyjs";
 
 function WriteArticle() {
-  const {user} = useBlogContext();
+  const {user, setArticlesWriter} = useBlogContext();
   const [articleData, setArticleData] = useState({});
   const [imageFile, setImage] = useState([]); 
 
@@ -30,18 +31,25 @@ function WriteArticle() {
     const formData = new FormData()
     formData.append('files', imageFile[0])
 
-    await uploadImage(formData).then(r => {
-      if(r.status == 200){
-        const responseArr = r.data;
-        data = {...data, picture: responseArr[0].id}
+    try {
+      uploadImage(formData).then(r => {
+        if(r.status == 200){
+          const responseArr = r.data;
+          data = {...data, picture: responseArr[0].id}
+      }
+      })
+      
+    } catch (error) {
+      alertify.notify('Não foi possível carregar a foto,verifique o formato e tente novamente','error',5, null);
+      setImage([])
+      return
     }
-    })
 
-    console.log(data);
+    await createArticle(data);
+    setArticlesWriter();
+    setImage([])
 
-    createArticle(data).then(r => {
-      console.log(r);
-    })
+    e.target.reset();
 
   }
 
@@ -58,7 +66,7 @@ function WriteArticle() {
           <div className="image-upload">
             <label htmlFor="custom-file" className="flex custom-file-label">
                   <Plus/>
-                  Escolha uma foto para seu artigo
+                  {imageFile.length > 0 ? imageFile[0].name : 'Escolha uma foto para seu artigo'}
             </label>
               <input type="file" id="custom-file" className="custom-file-input" onChange={(e) => setImage(e.target.files)} name='picture'/>
           </div>

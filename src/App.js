@@ -9,6 +9,7 @@ import Login from './containers/Login/Login';
 import Signup from './containers/Signup/Signup';
 import { useBlogContext } from './contexts/BlogContext';
 import WriteArticle from './containers/WriteArticle/WriteArticle';
+import MyArticles from './containers/MyArticles/MyArticles';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/cadastro" element={<Signup/>}/>
         <Route path="/escrever-artigo" element={user ? <WriteArticle/> : <Login/>}/>
+        <Route path="/meus-artigos/:id" element={user ? <MyArticles/> : <Login/>}/>
       </Routes>
       <Footer/>
     </Router>
