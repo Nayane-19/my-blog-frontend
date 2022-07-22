@@ -76,7 +76,7 @@
                 }
             }
 
-            a {
+            a, button {
                 height: 38px;
                 font-size: 14px;
                 gap: 7px;
@@ -84,6 +84,21 @@
                 svg {
                     width: 18px;
                     height: 18px;
+                }
+            }
+
+            .btns-user-article {
+                gap: 10px;
+
+                a {
+                    border: none;
+                }
+
+                .delete{
+                    background: #e9dbdc;
+                    color: #d11005;
+                    border: 2px solid #d11005;
+                    cursor: pointer;
                 }
             }
         }

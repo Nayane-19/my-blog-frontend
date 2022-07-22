@@ -31,19 +31,20 @@ function WriteArticle() {
     const formData = new FormData()
     formData.append('files', imageFile[0])
 
-    try {
-      uploadImage(formData).then(r => {
+  
+    await uploadImage(formData).then(r => {
+      console.log(r);
         if(r.status == 200){
+          console.log(r.data);
           const responseArr = r.data;
           data = {...data, picture: responseArr[0].id}
+      }else {
+        alertify.notify('Não foi possível carregar a foto,verifique o formato e tente novamente','error',5, null);
+        setImage([])
+        return
       }
       })
       
-    } catch (error) {
-      alertify.notify('Não foi possível carregar a foto,verifique o formato e tente novamente','error',5, null);
-      setImage([])
-      return
-    }
 
     await createArticle(data);
     setArticlesWriter();

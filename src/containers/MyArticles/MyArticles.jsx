@@ -32,7 +32,7 @@ function MyArticles() {
             {myArticles.map(article => {
                 return(
                     <div key={article.id} className='flex'>
-                        <Card article={article.attributes} id={article.id}/>
+                        <Card article={article.attributes} id={article.id} authenticated={true}/>
                     </div>
                 )
             })}

@@ -1,4 +1,5 @@
 import alertify from 'alertifyjs';
+import axios from 'axios';
 import http from '../lib/api';
 
 //post newsletter
@@ -39,7 +40,7 @@ export const login = async (data) => {
         }
         return {success: true};
     } catch (error) {
-        alertify.notify('Algo de errado aconteceu, tente novamente','error',5, null);
+        alertify.notify('Senha ou e-mail incorreto','error',5, null);
         return {success: false};
     }
     
@@ -55,8 +56,25 @@ export const logout = () => {
 // create article 
 export const createArticle = async (data) => {
     try {
-        await http.post('/api/articles', {data: data})
+        await http.post('/api/articles', {data: data}, {  headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem('userauth')}`,
+          }})
         alertify.notify('Artigo publicado com sucesso','success',5, null);
+    } catch (error) {
+        alertify.notify('Algo de errado aconteceu, tente novamente','error',5, null);
+        return {success: false};
+    }
+}
+
+//delete article 
+export const deleteArticle = async (id) => {
+    try {
+        await http.delete(`/api/articles/${id}`, {  headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem('userauth')}`,
+          }})
+        alertify.notify('Artigo deletado com sucesso','success',5, null);
     } catch (error) {
         alertify.notify('Algo de errado aconteceu, tente novamente','error',5, null);
         return {success: false};
@@ -65,6 +83,10 @@ export const createArticle = async (data) => {
 
 // upload image
 export const uploadImage = async (data) => {
-    const response = await http.post('/api/upload', data)
+    console.log(data);
+    const response = await http.post('/api/upload', data, {  headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem('userauth')}`,
+      }})
     return response
 }

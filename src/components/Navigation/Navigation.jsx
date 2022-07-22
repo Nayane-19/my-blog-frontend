@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useBlogContext } from '../../contexts/BlogContext';
 import { ReactComponent as Avatar } from "../../assets/svg/users.svg";
 import { ReactComponent as Logout } from "../../assets/svg/log-out.svg";
+import { ReactComponent as Write } from "../../assets/svg/poem.svg";
+import { ReactComponent as Arrow } from "../../assets/svg/arrow-up-right.svg";
 import { logout } from '../../blogApi/apiMethod';
 
 function Navigation() {
@@ -52,8 +54,16 @@ function Navigation() {
                         {user.username}
                     </span>
                     {showDrop &&
-                    <div className='flex drop' onClick={logoutUser}>
-                        <button className='flex'>
+                    <div className='column drop'>
+                        <Link className='flex' to={`/meus-artigos/${user.id}`}>
+                            <Arrow/>
+                            Ver meus artigos
+                        </Link>
+                        <Link className='flex' to='/escrever-artigo'>
+                            <Write/>
+                            Escrever um artigo
+                        </Link>
+                        <button className='flex' onClick={logoutUser}>
                             <Logout/>
                             Sair
                         </button>

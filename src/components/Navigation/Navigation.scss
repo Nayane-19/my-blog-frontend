@@ -70,25 +70,29 @@
                 color: $link;
             }
 
-            &:hover{
+            span{
+                &:hover{
                 .avatar, span{
                     color: $hoverLink;
                 }
+            }
             }
 
             .drop{
                 position: absolute;
                 background: $white;
                 border-radius: 4px;
-                filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.1));
+                box-shadow: 1px 2px 8px #ccc;
                 padding: 10px;
                 top: 38px;
                 width: 100%;
+                align-items: flex-start;
+                gap: 25px;
 
-                &:hover{
-                    svg, button {
-                        color: $hoverLink;
-                    }
+                svg {
+                    width: 18px;
+                    height: 18px;
+                    color: $hoverLink;
                 }
 
                 button {
@@ -96,9 +100,16 @@
                     border: none;
                     background: transparent;
                     gap: 7px;
-                    font-size: 16px;
-                    color: $link;
+                    font-size: 14px;
+                    color: $hoverLink;
                     font-weight: 500;
+                    padding: 0;
+                }
+
+                a {
+                    gap: 7px;
+                    font-size: 14px;
+                    color: $hoverLink;
                 }
             }
         }

@@ -7,12 +7,20 @@ function ButtonLink(props) {
 
 
   return (
-    <Link to={props.link} className={`ButtonLink flex ${props.full ? 'full' : 'light'}`}>
+    props.link ?
+    <Link to={props.link} className={`ButtonLink flex ${props.full ? 'full' : 'light'} ${props.className}`}>
         {props.children}
         {props.svg &&
         props.svg
         }
     </Link>
+    :
+    <button onClick={props.onClick} className={`ButtonLink flex ${props.full ? 'full' : 'light'} ${props.className}`}>
+        {props.children}
+        {props.svg &&
+        props.svg
+        }
+    </button>
   );
 }
 
