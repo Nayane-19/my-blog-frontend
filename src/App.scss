@@ -102,4 +102,12 @@
       border-color: #999;
     }
   }
+
+  @media (max-width:768px){
+    min-width: 50%;
+    max-width: 70%;
+    position: fixed;
+    top: 20%;
+    right: 15px;
+  }
 }

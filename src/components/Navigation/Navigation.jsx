@@ -7,12 +7,17 @@ import { ReactComponent as Avatar } from "../../assets/svg/users.svg";
 import { ReactComponent as Logout } from "../../assets/svg/log-out.svg";
 import { ReactComponent as Write } from "../../assets/svg/poem.svg";
 import { ReactComponent as Arrow } from "../../assets/svg/arrow-up-right.svg";
+import { ReactComponent as Bars } from "../../assets/svg/bars.svg";
 import { logout } from '../../blogApi/apiMethod';
+import useWindowDimensions from "../../contexts/WindowDimensions";
+import NavigationMenuMobile from './NavigationMenuMobile';
 
 function Navigation() {
     const {user, setUserInfo} = useBlogContext();
+    const {width} = useWindowDimensions();
     const [showDrop, setShowDrop] = useState(false);
     const navigate = useNavigate();
+    const [showMenuMobile, setShowMenuMobile] = useState(false)
 
     const logoutUser = () => {
         logout();
@@ -26,6 +31,7 @@ function Navigation() {
             <Link to='/'>
                 <img src={Logo} alt="" />
             </Link>
+            {width > 1025 ?
             <ul className='flex'>
                 <li>
                     <Link to='/'>
@@ -72,6 +78,14 @@ function Navigation() {
                 </li>
                 }
             </ul>
+             : 
+             <>
+             <Bars onClick={() => setShowMenuMobile(!showMenuMobile)} className='bars'/>
+             {showMenuMobile &&
+             <NavigationMenuMobile setShowMenuMobile={setShowMenuMobile} logoutUser={logoutUser}/>
+             }
+             </>
+             }
         </div>
     </nav>
   );

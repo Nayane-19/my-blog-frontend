@@ -44,4 +44,19 @@
             }
         }
     }
+
+    @media(max-width: 768px){
+        .box{
+            flex-direction: column-reverse;
+            padding: 15px;
+
+            .box-social{
+                width: 100%;
+            }
+
+            .Form{
+                width: 89%;
+            }
+        }
+    }
 }

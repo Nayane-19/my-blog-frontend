@@ -104,4 +104,26 @@
         }
     }
 
+    @media (max-width: 768px){
+        height: unset;
+        .box-bottom {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+
+            .btns-user-article {
+                width: 100%;
+
+                a{
+                    width: 100%;
+                    padding: 0;
+                }
+
+                .delete{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 }

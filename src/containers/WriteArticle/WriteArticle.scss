@@ -78,4 +78,18 @@
             }
         }
     }
+
+    @media(max-width: 768px){
+        .box-write {
+            flex-direction: column;
+
+            img {
+                max-width: 100%;
+            }
+
+            form {
+                width: 90%;
+            }
+        }
+    }
 }

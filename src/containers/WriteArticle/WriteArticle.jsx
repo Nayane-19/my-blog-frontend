@@ -7,11 +7,13 @@ import { ReactComponent as Plus } from "../../assets/svg/plus.svg";
 import { useBlogContext } from "../../contexts/BlogContext";
 import { createArticle, uploadImage } from "../../blogApi/apiMethod";
 import alertify from "alertifyjs";
+import { useNavigate } from "react-router-dom";
 
 function WriteArticle() {
   const {user, setArticlesWriter} = useBlogContext();
   const [articleData, setArticleData] = useState({});
   const [imageFile, setImage] = useState([]); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setArticleData({...articleData, [e.target.name]: e.target.value})
@@ -44,14 +46,13 @@ function WriteArticle() {
         return
       }
       })
-      
 
     await createArticle(data);
     setArticlesWriter();
     setImage([])
 
     e.target.reset();
-
+    navigate(`/meus-artigos/${user.id}`)
   }
 
 

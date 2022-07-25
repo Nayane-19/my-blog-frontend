@@ -114,4 +114,57 @@
             }
         }
     }
+
+    @media (max-width:768px){
+        .box-nav {
+            padding: 15px;
+            img{
+                height: 70px;
+            }
+        }
+        .bars{
+            width: 24px;
+            height: 24px;
+            color: $title;
+        }
+
+        .NavigationMenuMobile{
+            position: fixed;
+            background: $mainColor;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 5;
+
+            .close {
+                position: absolute;
+                right: 15px;
+                color: $white;
+            }
+
+            ul {
+                padding: 50px 0;
+                gap: 15px;
+
+                li{
+                    background: $title;
+                    padding: 15px 0;
+                    border-radius: 4px;
+                    color: $white;
+                    font-weight: 700;
+
+                    a{
+                        width: 100%;
+                        height: 100%;
+                        font-weight: 700;
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
 }
